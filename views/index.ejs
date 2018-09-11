@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<h1>This is the index route!</h1>
+
+<div class="ui main text container">
+	<div class="ui huge header">RESTful Blog Application</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+
+			<div class="item">
+
+			<% for(var i = 0; i < foundBlogs.length; i++) { %>
+
+					<div class="image"><img src="<%= foundBlogs[i].image %>"></div>
+
+					<div class="content">
+						<a class="header" href="/blogs/<%= foundBlogs[i]._id %>"><%= foundBlogs[i].title %></a>
+						
+
+						<div class="meta">
+							<span><%= foundBlogs[i].created.toDateString() %></span>
+								
+						</div>
+						<div class="description"><p> <%- foundBlogs[i].body.substring(0,100) %>... </p>	</div> <!--.substring() will splice the string following the arguments!-->
+						<div class="extra"><a class="ui floated basic violet button" href="/blogs/<%= foundBlogs[i]._id %>"><i class="right chevron icon"></i>Read More</a></div> 
+						<!-- Will retrieve a unique mongoose ID -->
+					</div>
+					 
+			</div>
+			<% } %>
+		</div>
+	</div>
+</div>
+
+
+<% include ./partials/footer %>

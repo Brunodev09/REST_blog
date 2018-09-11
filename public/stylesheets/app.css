@@ -1,0 +1,16 @@
+i.icon {
+	font-size: 2em;
+}
+
+.container.main {
+	margin-top: 100px;
+}
+
+#delete-form {
+	display: inline;
+}
+
+#edit {
+	float:right;
+}
+
